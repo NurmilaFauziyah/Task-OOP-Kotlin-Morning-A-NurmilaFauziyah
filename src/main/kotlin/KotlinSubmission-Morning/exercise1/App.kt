@@ -9,16 +9,28 @@ Lengkapi fungsi myProfile di bawah ini dengan membuat variabel dengan ketentuan 
 - Variable bertipe data boolean yang menyimpan nilai status Anda (single atau tidak)
 Dan Cetak setiap variabel ke layar saat variable myProfile di panggil
  */
-fun myProfile() {
-
+fun myProfile(){
+    var firstName : String = "Nurmila"
+    var lastName : String = "Fauziyah"
+    var age : Number = 20
+    var isSingle  : Boolean = true
+    println("========= My Profile ==========")
+    println("Nama depan saya $firstName")
+    println("Nama belakang saya $lastName")
+    println("Umur saya saat ini $age tahun")
+    println("Fakta bahwa saya single alias jomblo adalah $isSingle hehe")
 }
-
 
 /**
  *  Latihan 2
  *  Lengkapi fungsi di bawah ini agar dapat mencetak nilai dari parameter-parameter yang ada dengan fungsi println
  */
 fun groupDetail(groupId: String, groupMember: List<Any>, session: String): Any {
+    val groupMemberString : String = groupMember.joinToString(", ")
+    println("========= My Team =============")
+    println("Grup saya bernama $groupId")
+    println("Memiliki 11 anggota, yaitu $groupMemberString")
+    println("Kami bersebelas berada di sesi $session")
     return ""
 }
 
@@ -29,8 +41,10 @@ fun groupDetail(groupId: String, groupMember: List<Any>, session: String): Any {
  *
  */
 fun myTeam(): List<Any> {
-
-    return listOf()
+    val myTeam = listOf("Akmal", "Mila", "Paisal", "Rafly", "Haerul", "Abdi", "Aini", "Irby", "Rahmat", "Nugraha", "Syamsul")
+    var myName = listOf(myTeam[1])
+    println("========= My Nickname =========")
+    return myName
 }
 
 /**
@@ -41,27 +55,29 @@ fun myTeam(): List<Any> {
  *
  */
 fun totalMember(): Int {
-    val mentor = arrayOf<String>()
-    val countOfGroup = arrayOf<String>()
-
-    return 0
+    val mentor = arrayOf<String>("Kak Jovian", "Kak Imam", "Kak Reynaldi", "Kak Raihan") //Kak Rey mentor individual saya, Kak Raihan sering muncul di zoom jadi inget ekek
+    val myTeam = arrayOf<String>("Akmal", "Mila", "Paisal", "Rafly", "Haerul", "Abdi", "Aini", "Irby", "Rahmat", "Nugraha", "Syamsul")
+    val totalMentor = mentor.count()
+    val totalMyTeam = myTeam.count()
+    return totalMentor + totalMyTeam
 }
 
 fun main() {
 
     myProfile()
 
-    val myTeam = myTeam()
-    println("My team is: $myTeam")
-
-    val totalMember = totalMember()
-    println("Total Member group : $totalMember")
-
     /**
      *  Latihan 5
      *  Ubah nilai argumen-argumen dari fungsi groupDetail di bawah ini sesuai dengan data group kamu
      *
      */
-    groupDetail("", listOf(), "")
+    groupDetail("Massive Bareng", listOf("Akmal", "Mila", "Paisal", "Rafly", "Haerul", "Abdi", "Aini", "Irby", "Rahmat", "Nugraha", "Syamsul"), "Morning-A")
+
+    println(myTeam().joinToString(", "))
+
+    val totalMember = totalMember()
+    println("========= Total Member ========")
+    println("Total Member Group : $totalMember")
+    println("===============================")
 
 }

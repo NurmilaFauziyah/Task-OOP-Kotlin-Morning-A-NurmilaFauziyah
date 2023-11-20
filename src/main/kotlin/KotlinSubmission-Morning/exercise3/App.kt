@@ -15,6 +15,19 @@ fun main() {
     5. Jika nilai score di bawah 60:
     - Isi variabel result dengan nilai: 'Anda mendapatkan nilai E.'
      */
-    // Buat di bawah sini
+    val score : Int = 90
+    val result : String =
+        if (score >= 90){
+            "Selamat! Anda mendapatkan nilai A."
+        } else if (score >= 80 && score <= 89){
+            "Anda mendapatkan nilai B."
+        } else if (score >= 70 && score <= 79){
+            "Anda mendapatkan nilai C."
+        } else if (score >= 60 && score <= 69){
+            "Anda mendapatkan nilai D."
+        } else {
+            "Anda mendapatkan nilai E."
+        }
+    println(result)
 
 }
